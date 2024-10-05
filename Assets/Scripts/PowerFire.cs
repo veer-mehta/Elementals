@@ -19,6 +19,13 @@ public class PowerFire : MonoBehaviour
         flameList.Add(flame);
         GetComponent<PowerWater>().destroyPower();
         Destroy(flame,0.5f);
+
+        RaycastHit2D hit = Physics2D.BoxCast(new Vector3(SpawnPoint.position.x,SpawnPoint.position.y+1), new Vector2(1,1), 0f, Vector2.up);
+        Debug.Log(hit.collider.tag);
+        if (hit.collider.tag == "Enemy")
+        {
+            Destroy(hit.collider.gameObject);
+        }
     }
 
 }

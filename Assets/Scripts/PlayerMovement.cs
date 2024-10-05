@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
-        if(Input.GetKeyDown(KeyCode.W)) 
+        if(Input.GetKeyDown(KeyCode.W) && isGrounded) 
         {
             isGrounded = false;
             rb.velocity = new Vector2(rb.velocity.x,jumpForce);
@@ -79,7 +79,11 @@ public class PlayerMovement : MonoBehaviour
                     GetComponent<PowerSpace>().UsePower();
                     break;
                 case Powers.Air:
-                    GetComponent<PowerAir>().UsePower();
+                    if (isGrounded)
+                    {
+                        GetComponent<PowerAir>().UsePower();
+                        isGrounded = false;
+                    }
                     break;
                 case Powers.Earth:
                     GetComponent<PowerEarth>().UsePower();
@@ -101,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
             currentPower = Powers.Space;
         }else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
+
             currentPower = Powers.Air;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha5))
@@ -114,6 +119,10 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "ground" || collision.gameObject.tag == "ice")
         {
             isGrounded=true;
+        }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            UnityEngine.Debug.Log("You are dead");
         }
     }
 
