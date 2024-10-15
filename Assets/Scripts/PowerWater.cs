@@ -47,9 +47,8 @@ public class PowerWater : MonoBehaviour
             }
             else
             {
-                lastIceBlock=null;
-            }
-            
+                lastIceBlock = null;
+            }  
         }
         return;
     }
