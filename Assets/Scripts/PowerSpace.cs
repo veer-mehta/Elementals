@@ -21,11 +21,11 @@ public class PowerSpace : MonoBehaviour
         Destroy(effect,0.3f);
         if (transform.localScale.x == 1)
         {
-            transform.position += new Vector3(4.5f, 0f, 0f);
+            transform.position += new Vector3(8f, 0f, 0f);
         }
         else
         {
-            transform.position -= new Vector3(4.5f, 0f, 0f);
+            transform.position -= new Vector3(8f, 0f, 0f);
         }
         StartCoroutine(TimerCoroutine());
     }

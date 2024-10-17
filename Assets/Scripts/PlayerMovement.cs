@@ -97,15 +97,17 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             currentPower = Powers.Water;
-        }else if (Input.GetKeyDown(KeyCode.Alpha2))
+        }
+		else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             currentPower = Powers.Fire;
-        }else if (Input.GetKeyDown(KeyCode.Alpha3))
+        }
+		else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             currentPower = Powers.Space;
-        }else if (Input.GetKeyDown(KeyCode.Alpha4))
+        }
+		else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-
             currentPower = Powers.Air;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha5))
