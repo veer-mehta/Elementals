@@ -27,7 +27,7 @@ public class PowerWater : MonoBehaviour
         {
             spawnPosition=spawnPoint.position;
         }
-        if(iceStack.Count < 5)
+        if(iceStack.Count < 8)
         {
             lastIceBlock = Instantiate(ice, spawnPosition, Quaternion.identity);
             iceStack.Push(lastIceBlock);
